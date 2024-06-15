@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": ["BUY", "SELL"],
+        "description": "The type of the trade"
+      },
+      "shareId": {
+        "type": "integer",
+        "description": "The ID of the share"
+      },
+      "portfolioId": {
+        "type": "integer",
+        "description": "The ID of the portfolio"
+      },
+      "quantity": {
+        "type": "integer",
+        "description": "The quantity of shares"
+      }
+    },
+    "required": ["type", "shareId", "portfolioId", "quantity"],
+    "additionalProperties": false
+  }
