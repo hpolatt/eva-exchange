@@ -4,9 +4,7 @@
   "main": "app.js",
   "scripts": {
     "startDev": "env-cmd -f env/.env.dev node app.js",
-    "startProd": "env-cmd -f env/.env.prod node app.js",
-    "seed": "npx sequelize-cli db:seed:all",
-    "migrate": "npx sequelize-cli db:migrate"
+    "startProd": "env-cmd -f env/.env.prod node app.js"
   },
   "keywords": [],
   "author": "",
