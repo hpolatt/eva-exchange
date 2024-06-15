@@ -54,6 +54,20 @@ npm run startProd
 ```
 The application will be available at http://localhost:3000.
 
+
+## Postman Collection
+
+This project includes a Postman collection that you can use to test the API endpoints. The collection file is named `eva-exchange.postman_collection.json` and is located in the root directory of the project.
+
+To use the collection:
+
+1. Download the `eva-exchange.postman_collection.json` file.
+2. Open Postman.
+3. Click on the "Import" button.
+4. Select the `eva-exchange.postman_collection.json` file that you downloaded.
+
+After importing the collection, you can select an API endpoint to test. The request method, URL, and required parameters are already set up for you.
+
 ## Features;
 - User registration and Show All users
 - Buying and selling shares
