@@ -1,21 +1,40 @@
-class Share {
+const { Model } = require("sequelize");
+
+class Share extends Model {
   constructor(sequelize, DataTypes) {
     return sequelize.define('share', {
       symbol: {
-        type: DataTypes.STRING,
-        unique: true,
+        type: DataTypes.STRING(3),
+        allowNull: false,
         validate: {
-          is: /^[A-Z]{3}$/
+          isUppercase: true,
+          len: [3, 3]
         }
       },
       price: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: false,
         validate: {
-          isFloat: true,
-          min: 0
+          isDecimal: true
         }
+      },
+      sharedate: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: sequelize.NOW
       }
+    }, {
+      indexes: [
+        {
+          unique: true,
+          fields: ['symbol', 'sharedate']
+        }
+      ]
     });
+  }
+
+  static associate(models) {
+    this.hasMany(models.Trade);
   }
 }
 

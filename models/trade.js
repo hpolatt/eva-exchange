@@ -1,4 +1,6 @@
-class Trade {
+const { Model } = require("sequelize");
+
+class Trade extends Model {
     constructor(sequelize, DataTypes) {
       return sequelize.define('trade', {
         type: DataTypes.ENUM('BUY', 'SELL'),
@@ -7,6 +9,11 @@ class Trade {
         quantity: DataTypes.INTEGER
       });
     }
+
+    static associate(models) {
+        this.belongsTo(models.Portfolio);
+        this.belongsTo(models.Share);
+      }
   }
   
   module.exports = Trade;

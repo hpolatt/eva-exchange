@@ -4,11 +4,11 @@ const BaseTradeController = require('./baseTradeController');
 class BuyTradeController {
   
   static async buy(req, res) {
-    const { userId, symbol, quantity } = req.body;
+    const { userId, symbol, quantity, portfolioId } = req.body;
     try {
       const user = await BaseTradeController.getUserWithPortfolio(userId);
       const share = await BaseTradeController.getRegisteredShare(symbol);
-      const portfolio = await BaseTradeController.getPortfolio(user.id);
+      const portfolio = await BaseTradeController.getPortfolio(user.id, portfolioId);
 
       const buyTrade = await trade.create({
         type: 'BUY',

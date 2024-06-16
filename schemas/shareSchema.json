@@ -1,17 +1,17 @@
 {
-    "type": "object",
-    "additionalProperties": false,
-    "properties": {
-      "symbol": {
-        "type": "string",
-        "pattern": "^[A-Z]{3}$",
-        "description": "The symbol of the share"
-      },
-      "price": {
-        "type": "number",
-        "minimum": 0,
-        "description": "The price of the share"
-      }
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "description": "The symbol of the share"
     },
-    "required": ["symbol", "price"]
-  }
+    "price": {
+      "type": "number",
+      "pattern": "^[0-9]*(\\.[0-9]{1,2})?$",
+      "description": "The price of the share"
+    }
+  },
+  "required": ["symbol", "price"]
+}

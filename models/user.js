@@ -1,4 +1,6 @@
-class User {
+const { Model } = require("sequelize");
+
+class User extends Model {
   constructor(sequelize, DataTypes) {
     return sequelize.define('user', {
       name: DataTypes.STRING,
@@ -6,6 +8,10 @@ class User {
       email: DataTypes.STRING,
       password: DataTypes.STRING
     });
+  }
+
+  associate(models) {
+    this.hasMany(models.portfolio,  { as: 'portfolios', foreignKey: 'userId'});
   }
 }
 
