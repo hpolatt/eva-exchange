@@ -1,17 +1,15 @@
-const { Model } = require("sequelize");
-
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("./getSequelize");
 class Portfolio extends Model {
-  constructor(sequelize, DataTypes) {
-    return sequelize.define('portfolio', {
-      userId: DataTypes.INTEGER,
-      name: DataTypes.STRING,
-    });
-  }
-
   static associate(models) {
     this.belongsTo(models.user); // Portfolio has a userId
-    this.belongsTo(models.trade); // Portfolio has many trades
+    this.hasMany(models.trade); // Portfolio has many trades
   }
 }
+
+Portfolio.init({
+    userId: DataTypes.INTEGER,
+    name: DataTypes.STRING,
+  }, { sequelize: sequelize(), modelName: 'portfolio' });
 
 module.exports = Portfolio;

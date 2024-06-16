@@ -1,20 +1,19 @@
-const { Model } = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("./getSequelize");
 
 class Trade extends Model {
-    constructor(sequelize, DataTypes) {
-      return sequelize.define('trade', {
-        type: DataTypes.ENUM('BUY', 'SELL'),
-        shareId: DataTypes.INTEGER,
-        portfolioId: DataTypes.INTEGER,
-        quantity: DataTypes.INTEGER
-      });
-    }
-
     static associate(models) {
-        this.belongsTo(models.Portfolio);
-        this.belongsTo(models.Share);
+        this.belongsTo(models.portfolio);
+        this.belongsTo(models.share);
       }
   }
   
+  Trade.init({
+    type: DataTypes.ENUM('BUY', 'SELL'),
+    shareId: DataTypes.INTEGER,
+    portfolioId: DataTypes.INTEGER,
+    quantity: DataTypes.INTEGER
+  }, { sequelize: sequelize(), modelName: 'trade' });
+
   module.exports = Trade;
   
