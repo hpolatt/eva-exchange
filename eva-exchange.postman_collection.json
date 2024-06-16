@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Huseyin\",\n    \"email\": \"mr.huseyin.polat@gmail.com\",\n    \"username\": \"huso\"\n}",
+					"raw": "{\n    \"name\": \"Huseyin\",\n    \"email\": \"info@hpolat.com\",\n    \"username\": \"hpolat\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -34,7 +34,72 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "1. Create User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Huseyin\",\n    \"email\": \"info@hpolat.com\",\n    \"username\": \"hpolat\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "165"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a5-Zjj0WiNpzF6rG7IVgixYDT//cvk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Jun 2024 09:59:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"name\": \"Huseyin\",\n    \"email\": \"info@hpolat.com\",\n    \"username\": \"hpolat\",\n    \"updatedAt\": \"2024-06-16T09:59:08.241Z\",\n    \"createdAt\": \"2024-06-16T09:59:08.241Z\",\n    \"password\": null\n}"
+				}
+			]
 		},
 		{
 			"name": "1.1. Users",
@@ -42,7 +107,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/users/create",
+					"raw": "http://localhost:3000/api/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -50,12 +115,66 @@
 					"port": "3000",
 					"path": [
 						"api",
-						"users",
-						"create"
+						"users"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "1.1. Users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "517"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"205-N0wIfTkvqJBdY1ZYxOoxNBjo/mU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Jun 2024 09:59:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Huseyin\",\n        \"username\": \"huso\",\n        \"email\": \"mr.huseyin.polat@gmail.com\",\n        \"password\": null,\n        \"createdAt\": \"2024-06-16T00:05:57.750Z\",\n        \"updatedAt\": \"2024-06-16T00:05:57.750Z\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Huseyin\",\n        \"username\": \"huso\",\n        \"email\": \"mr.huseyin.polat@gmail.com\",\n        \"password\": null,\n        \"createdAt\": \"2024-06-16T09:48:13.990Z\",\n        \"updatedAt\": \"2024-06-16T09:48:13.990Z\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Huseyin\",\n        \"username\": \"hpolat\",\n        \"email\": \"info@hpolat.com\",\n        \"password\": null,\n        \"createdAt\": \"2024-06-16T09:59:08.241Z\",\n        \"updatedAt\": \"2024-06-16T09:59:08.241Z\"\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "2. Create Portfolio",
@@ -64,7 +183,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"userId\": 1,\n    \"name\": \"Huseyin's Portfolio\"\n}",
+					"raw": "{\n    \"userId\": 3,\n    \"name\": \"Huseyin's Second Portfolio\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -85,7 +204,168 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "2. Create Portfolio",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 3,\n    \"name\": \"Huseyin's Second Portfolio\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/portfolios/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"portfolios",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "133"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"85-GeeS3y1d1ud5fpCDQrygfRkuWSw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Jun 2024 09:59:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"userId\": 3,\n    \"name\": \"Huseyin's Second Portfolio\",\n    \"updatedAt\": \"2024-06-16T09:59:27.421Z\",\n    \"createdAt\": \"2024-06-16T09:59:27.421Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "2.1 Get PortFolio",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1,\n    \"name\": \"Huseyin's Second Portfolio\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/portfolios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"portfolios"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "2.1 Get PortFolio",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 1,\n    \"name\": \"Huseyin's Second Portfolio\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/portfolios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"portfolios"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1217"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4c1-zTPc56eN1IsOCGPzAzTOfbiVdMc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Jun 2024 09:52:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"userId\": 1,\n        \"name\": \"Huseyin's Portfolio\",\n        \"createdAt\": \"2024-06-16T00:06:01.540Z\",\n        \"updatedAt\": \"2024-06-16T00:06:01.540Z\",\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Huseyin\",\n            \"username\": \"huso\",\n            \"email\": \"mr.huseyin.polat@gmail.com\",\n            \"password\": null,\n            \"createdAt\": \"2024-06-16T00:05:57.750Z\",\n            \"updatedAt\": \"2024-06-16T00:05:57.750Z\"\n        },\n        \"trades\": [\n            {\n                \"id\": 1,\n                \"type\": \"BUY\",\n                \"shareId\": 1,\n                \"portfolioId\": 1,\n                \"quantity\": 11,\n                \"createdAt\": \"2024-06-16T00:06:51.450Z\",\n                \"updatedAt\": \"2024-06-16T00:06:51.450Z\"\n            },\n            {\n                \"id\": 2,\n                \"type\": \"BUY\",\n                \"shareId\": 1,\n                \"portfolioId\": 1,\n                \"quantity\": 11,\n                \"createdAt\": \"2024-06-16T00:06:52.878Z\",\n                \"updatedAt\": \"2024-06-16T00:06:52.878Z\"\n            },\n            {\n                \"id\": 4,\n                \"type\": \"SELL\",\n                \"shareId\": 1,\n                \"portfolioId\": 1,\n                \"quantity\": 18,\n                \"createdAt\": \"2024-06-16T00:08:20.519Z\",\n                \"updatedAt\": \"2024-06-16T00:08:20.519Z\"\n            }\n        ]\n    },\n    {\n        \"id\": 2,\n        \"userId\": 1,\n        \"name\": \"Huseyin's Second Portfolio\",\n        \"createdAt\": \"2024-06-16T00:07:19.017Z\",\n        \"updatedAt\": \"2024-06-16T00:07:19.017Z\",\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Huseyin\",\n            \"username\": \"huso\",\n            \"email\": \"mr.huseyin.polat@gmail.com\",\n            \"password\": null,\n            \"createdAt\": \"2024-06-16T00:05:57.750Z\",\n            \"updatedAt\": \"2024-06-16T00:05:57.750Z\"\n        },\n        \"trades\": [\n            {\n                \"id\": 3,\n                \"type\": \"BUY\",\n                \"shareId\": 1,\n                \"portfolioId\": 2,\n                \"quantity\": 11,\n                \"createdAt\": \"2024-06-16T00:07:22.460Z\",\n                \"updatedAt\": \"2024-06-16T00:07:22.460Z\"\n            }\n        ]\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "3. Create Share",
@@ -94,7 +374,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"symbol\": \"UTX\",\n    \"price\": 234.31\n}",
+					"raw": "{\n    \"symbol\": \"BTC\",\n    \"price\": 120.31\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -115,7 +395,72 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "3. Create Share",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"symbol\": \"BTC\",\n    \"price\": 120.31\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/shares/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shares",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d-we6OboiIEfJHIO4UDWT3d1738hE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Jun 2024 09:59:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"symbol\": \"BTC\",\n    \"price\": \"120.31\",\n    \"sharedate\": \"2024-06-16T09:59:43.352Z\",\n    \"updatedAt\": \"2024-06-16T09:59:43.353Z\",\n    \"createdAt\": \"2024-06-16T09:59:43.353Z\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Trade -Buy",
@@ -124,7 +469,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"userId\": 1,\n    \"symbol\": \"UTX\",\n    \"quantity\": 11\n}",
+					"raw": "{\n    \"userId\": 3,\n    \"symbol\": \"BTC\",\n    \"quantity\": 25,\n    \"portfolioId\": 3\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -145,7 +490,72 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Trade -Buy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 3,\n    \"symbol\": \"BTC\",\n    \"quantity\": 25,\n    \"portfolioId\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/trades/buy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"trades",
+								"buy"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "141"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8d-dXhrnp7JfKLOebIZZXNuE30sqS0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Jun 2024 10:00:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 6,\n    \"type\": \"BUY\",\n    \"shareId\": 3,\n    \"portfolioId\": 3,\n    \"quantity\": 25,\n    \"updatedAt\": \"2024-06-16T10:00:58.389Z\",\n    \"createdAt\": \"2024-06-16T10:00:58.389Z\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Trade - Sell",
@@ -154,7 +564,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"userId\": 1,\n    \"symbol\": \"UTX\",\n    \"quantity\": 22\n}",
+					"raw": "{\n    \"userId\": 3,\n    \"symbol\": \"BTC\",\n    \"quantity\": 5,\n    \"portfolioId\": 3\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -162,7 +572,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/users/",
+					"raw": "http://localhost:3000/api/trades/sell",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -170,12 +580,141 @@
 					"port": "3000",
 					"path": [
 						"api",
-						"users",
-						""
+						"trades",
+						"sell"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Trade - Sell - Bad Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 3,\n    \"symbol\": \"UTX\",\n    \"quantity\": 18,\n    \"portfolioId\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/trades/sell",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"trades",
+								"sell"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "100"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"64-a8kAy1gbqKpELZLB+Pn2i9gZGaI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Jun 2024 10:01:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Insufficient shares available for sale. You have a maximum of 0 shares that can be sold.\"\n}"
+				},
+				{
+					"name": "Trade - Sell",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 3,\n    \"symbol\": \"BTC\",\n    \"quantity\": 5,\n    \"portfolioId\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/trades/sell",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"trades",
+								"sell"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "141"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8d-gSUW/4AvuHPgyo7/Cmx6UDx6KYM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Jun 2024 10:01:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 7,\n    \"type\": \"SELL\",\n    \"shareId\": 3,\n    \"portfolioId\": 3,\n    \"quantity\": 5,\n    \"updatedAt\": \"2024-06-16T10:01:43.684Z\",\n    \"createdAt\": \"2024-06-16T10:01:43.684Z\"\n}"
+				}
+			]
 		}
 	]
 }
